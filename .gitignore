@@ -1,0 +1,12 @@
+# sampah OS
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# editor
+.vscode/
+.idea/
+*.swp
+
+# sementara
+diag.js

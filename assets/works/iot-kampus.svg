@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" width="640" height="400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#141414"/><stop offset="1" stop-color="#1c0505"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e60012"/><stop offset="1" stop-color="#a8000d"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="400" fill="url(#bg)"/>
+  <g stroke="#e60012" stroke-width="2" opacity=".18">
+    <path d="M0 300 L640 120"/><path d="M0 340 L640 160"/><path d="M0 260 L640 80"/>
+  </g>
+  <g opacity=".9">
+    <rect x="54" y="52" width="150" height="20" fill="url(#bar)" transform="skewX(-12)"/>
+    <rect x="54" y="92" width="380" height="12" fill="#f5f5f5" opacity=".85" transform="skewX(-12)"/>
+    <rect x="54" y="116" width="300" height="10" fill="#8a8a8a" transform="skewX(-12)"/>
+    <rect x="54" y="150" width="150" height="70" fill="#1f1f1f" stroke="#e60012" stroke-width="2" transform="skewX(-8)"/>
+    <rect x="220" y="150" width="150" height="70" fill="#1f1f1f" stroke="#e60012" stroke-width="2" transform="skewX(-8)"/>
+    <rect x="386" y="150" width="150" height="70" fill="#1f1f1f" stroke="#e60012" stroke-width="2" transform="skewX(-8)"/>
+    <g fill="#e60012">
+      <rect x="70" y="176" width="90" height="8" transform="skewX(-8)"/>
+      <rect x="236" y="176" width="90" height="8" transform="skewX(-8)"/>
+      <rect x="402" y="176" width="90" height="8" transform="skewX(-8)"/>
+    </g>
+    <rect x="54" y="248" width="482" height="96" fill="#101010" stroke="#333" stroke-width="2"/>
+    <polyline points="70,320 140,290 210,308 280,266 350,284 420,250 500,270" fill="none" stroke="#e60012" stroke-width="4"/>
+  </g>
+</svg>

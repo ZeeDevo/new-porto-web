@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PHANTOM // PORTFOLIO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;900&family=Barlow+Condensed:wght@600;700;800&family=Teko:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== LOADER ========== -->
+  <div id="loader">
+    <div class="loader-mark">M<span>E</span></div>
+    <div class="loader-bar"><i></i></div>
+    <p class="loader-txt">TAKE YOUR HEART</p>
+  </div>
+
+  <!-- ========== SIDE NAV (vertical tabs ala P5X) ========== -->
+  <nav id="tabs">
+    <a href="#home"     class="tab active" data-i="01"><span>HOME</span></a>
+    <a href="#about"    class="tab" data-i="02"><span>ABOUT</span></a>
+    <a href="#skills"   class="tab" data-i="03"><span>SKILLS</span></a>
+    <a href="#works"    class="tab" data-i="04"><span>WORKS</span></a>
+    <a href="#visual"   class="tab" data-i="05"><span>VISUAL</span></a>
+    <a href="#contact"  class="tab" data-i="06"><span>CONTACT</span></a>
+  </nav>
+
+  <!-- ========== SLANT PROGRESS ========== -->
+  <div id="progress"></div>
+
+  <main id="scroller">
+
+    <!-- ===== HOME ===== -->
+    <section id="home" class="panel hero">
+      <div class="hero-bg"></div>
+      <div class="speedlines"></div>
+      <span class="hero-stamp" aria-hidden="true">01 // SELF</span>
+      <span class="hero-slash" aria-hidden="true"></span>
+
+      <div class="hero-inner">
+        <p class="kicker" data-rev>PERSONAL PORTFOLIO</p>
+        <h1 class="hero-title">
+          <span data-rev>HAIRIL</span>
+          <span data-rev class="accent">AS SAPUTRA</span>
+        </h1>
+        <div class="hero-role" data-rev>
+          <span class="chip">MAHASISWA</span>
+          <span class="chip">DEVELOPER</span>
+          <span class="chip">DESIGNER</span>
+        </div>
+        <p class="hero-desc" data-rev>
+          Mengubah ide jadi produk nyata. Selamat datang di distorsi milikku —
+          tempat kode, desain, dan cerita bertabrakan.
+        </p>
+        <div class="hero-cta" data-rev>
+          <a href="#works" class="btn btn-red">LIHAT KARYA</a>
+          <a href="#contact" class="btn btn-ghost">HUBUNGI</a>
+        </div>
+      </div>
+
+      <div class="card-stage" data-rev>
+        <div class="lanyard" aria-hidden="true">
+          <span class="lanyard-strap left"></span>
+          <span class="lanyard-strap right"></span>
+          <span class="lanyard-clip"></span>
+        </div>
+        <div class="hero-card" id="heroCard" tabindex="0" role="button" aria-label="Kartu profil, klik untuk membalik">
+          <div class="card-face card-front">
+            <div class="card-tag">CARD 01 · ARCANA</div>
+            <div class="card-img">
+              <img src="assets/me.jpeg" alt="Foto profil">
+              <span class="card-shine" aria-hidden="true"></span>
+            </div>
+            <div class="card-foot">THE FOOL</div>
+            <span class="card-hint">KLIK ▸</span>
+          </div>
+          <div class="card-face card-back">
+            <div class="card-tag">PROFIL // HAIRIL</div>
+            <ul class="card-stats">
+              <li><span>NAMA</span><b>HAIRIL</b></li>
+              <li><span>STATUS</span><b>MAHASISWA</b></li>
+              <li><span>KAMPUS</span><b>UNIV. COKROAMINOTO PALOPO</b></li>
+              <li><span>ROLE</span><b>DEV / DESIGN</b></li>
+            </ul>
+            <div class="card-foot">TAKE YOUR HEART</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="panel">
+      <span class="panel-deco deco-circle" aria-hidden="true">ME</span>
+      <header class="sec-head">
+        <span class="sec-num">02</span>
+        <h2>ABOUT ME</h2>
+        <span class="sec-rule" aria-hidden="true"></span>
+      </header>
+      <div class="about-grid">
+        <div class="dialogue-box" data-rev>
+          <div class="speaker">PHANTOM</div>
+          <p>
+            Hai! Aku Hairil As Saputra, mahasiswa Universitas Cokroaminoto Palopo.
+            Aku suka membangun antarmuka berkarakter — fokus di web modern,
+            pengalaman pengguna, dan detail visual yang berani.
+          </p>
+          <p>
+            Selain kode, aku mendalami desain grafis: poster, brand, dan visual
+            yang punya pesan. Setiap proyek adalah "calling card" yang harus
+            tersampaikan.
+          </p>
+          <div class="dialogue-next">▼</div>
+        </div>
+        <ul class="stat-list">
+          <li data-rev><span>NAMA</span><b>Hairil As Saputra</b></li>
+          <li data-rev><span>PERAN</span><b>Developer / Desainer</b></li>
+          <li data-rev><span>KAMPUS</span><b>Univ. Cokroaminoto Palopo</b></li>
+          <li data-rev><span>LOKASI</span><b>Palopo, Indonesia</b></li>
+          <li data-rev><span>STATUS</span><b class="live">OPEN TO WORK</b></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="panel">
+      <span class="panel-deco deco-type" aria-hidden="true">ABILITY</span>
+      <header class="sec-head">
+        <span class="sec-num">03</span>
+        <h2>SKILLS</h2>
+        <span class="sec-rule" aria-hidden="true"></span>
+      </header>
+      <div class="skill-grid" id="skillGrid">
+        <div class="skill" data-rev>
+          <div class="skill-top"><span>HTML / CSS</span><b>95%</b></div>
+          <div class="bar"><i style="--w:95%"></i></div>
+        </div>
+        <div class="skill" data-rev>
+          <div class="skill-top"><span>JavaScript</span><b>90%</b></div>
+          <div class="bar"><i style="--w:90%"></i></div>
+        </div>
+        <div class="skill" data-rev>
+          <div class="skill-top"><span>React / Next</span><b>85%</b></div>
+          <div class="bar"><i style="--w:85%"></i></div>
+        </div>
+        <div class="skill" data-rev>
+          <div class="skill-top"><span>UI / UX Design</span><b>80%</b></div>
+          <div class="bar"><i style="--w:80%"></i></div>
+        </div>
+        <div class="skill" data-rev>
+          <div class="skill-top"><span>Node / API</span><b>78%</b></div>
+          <div class="bar"><i style="--w:78%"></i></div>
+        </div>
+        <div class="skill" data-rev>
+          <div class="skill-top"><span>Git / DevOps</span><b>72%</b></div>
+          <div class="bar"><i style="--w:72%"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WORKS ===== -->
+    <section id="works" class="panel">
+      <span class="panel-deco deco-cross" aria-hidden="true">///</span>
+      <header class="sec-head">
+        <span class="sec-num">04</span>
+        <h2>WORKS</h2>
+        <span class="sec-rule" aria-hidden="true"></span>
+      </header>
+      <div class="work-grid">
+        <article class="work" data-rev>
+          <div class="work-thumb"><img src="assets/works/iot-kampus.svg" alt="Visual Web Platform Kampus IoT" loading="lazy"><span>01</span></div>
+          <h3>Web Platform Kampus IoT</h3>
+          <p>Platform manajemen kampus berbasis IoT: pantau ruang, perangkat, dan akses dari satu dashboard.</p>
+          <div class="work-tags"><span>IoT</span><span>Dashboard</span><span>Web</span></div>
+        </article>
+        <article class="work" data-rev>
+          <div class="work-thumb"><img src="assets/works/preloved-app.svg" alt="Visual Preloved App" loading="lazy"><span>02</span></div>
+          <h3>Preloved App</h3>
+          <p>Aplikasi jual-beli barang bekas: pasang iklan, chat penjual, dan transaksi aman.</p>
+          <div class="work-tags"><span>App</span><span>Marketplace</span><span>UI/UX</span></div>
+        </article>
+        <article class="work" data-rev>
+          <div class="work-thumb"><img src="assets/works/erp-woodcraft.svg" alt="Visual ERP Woodcraft Furniture" loading="lazy"><span>03</span></div>
+          <h3>ERP Woodcraft Furniture</h3>
+          <p>Sistem ERP untuk produsen furnitur kayu: stok bahan, produksi, dan pesanan terintegrasi.</p>
+          <div class="work-tags"><span>ERP</span><span>Produksi</span><span>Inventory</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== VISUAL / GRAPHIC DESIGN ===== -->
+    <section id="visual" class="panel">
+      <span class="panel-deco deco-type" aria-hidden="true">VISUAL</span>
+      <header class="sec-head">
+        <span class="sec-num">05</span>
+        <h2>GRAPHIC DESIGN</h2>
+        <span class="sec-rule" aria-hidden="true"></span>
+      </header>
+      <p class="sec-sub" data-rev>Klik poster untuk lihat detail.</p>
+      <div class="poster-grid" id="posterGrid" data-rev>
+        <button class="poster-card" data-poster="assets/poster/Kebakaran_hutan.png"
+                data-title="Kebakaran Hutan" data-tag="Poster · Kampanye Lingkungan"
+                data-desc="Poster kampanye bertema bahaya kebakaran hutan. Kontras panas–dingin dipakai untuk menekan urgensi isu lingkungan."
+                data-year="2025">
+          <img src="assets/poster/Kebakaran_hutan.png" alt="Poster Kebakaran Hutan" loading="lazy">
+          <span class="poster-bar">01 · LINGKUNGAN</span>
+        </button>
+        <button class="poster-card" data-poster="assets/poster/luwu_poster.png"
+                data-title="Luwu" data-tag="Poster · Budaya"
+                data-desc="Eksplorasi identitas visual daerah Luwu. Tipografi tebal dan palet gelap-merah untuk kesan tegas dan bersejarah."
+                data-year="2025">
+          <img src="assets/poster/luwu_poster.png" alt="Poster Luwu" loading="lazy">
+          <span class="poster-bar">02 · BUDAYA</span>
+        </button>
+        <button class="poster-card" data-poster="assets/poster/poster_dewi.png"
+                data-title="Dewi" data-tag="Poster · Karakter"
+                data-desc="Poster karakter dengan komposisi dinamis. Fokus pada sosok, gestur, dan aksen warna sebagai titik perhatian."
+                data-year="2025">
+          <img src="assets/poster/poster_dewi.png" alt="Poster Dewi" loading="lazy">
+          <span class="poster-bar">03 · KARAKTER</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="panel">
+      <span class="panel-deco deco-circle" aria-hidden="true">05</span>
+      <header class="sec-head">
+        <span class="sec-num">06</span>
+        <h2>CONTACT</h2>
+        <span class="sec-rule" aria-hidden="true"></span>
+      </header>
+      <div class="contact-grid">
+        <div class="dialogue-box wide" data-rev>
+          <div class="speaker">CALLING CARD</div>
+          <p>Punya proyek atau sekadar mau ngobrol? Kirim pesan.</p>
+          <div class="contact-links">
+            <a href="mailto:saputrahairil16@gmail.com">✉ saputrahairil16@gmail.com</a>
+            <a href="https://github.com/ZeeDevo" target="_blank" rel="noopener">◈ github.com/ZeeDevo</a>
+          </div>
+        </div>
+        <form class="c-form" data-rev onsubmit="return fake(event)">
+          <input type="text" placeholder="NAMA" required>
+          <input type="email" placeholder="EMAIL" required>
+          <textarea rows="4" placeholder="PESAN" required></textarea>
+          <button class="btn btn-red" type="submit">KIRIM</button>
+          <p class="form-msg" id="formMsg"></p>
+        </form>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <span>© 2026 HAIRIL AS SAPUTRA</span>
+      <span>BUILT WITH STYLE</span>
+    </footer>
+  </main>
+
+  <!-- ========== LIGHTBOX DETAIL POSTER ========== -->
+  <div id="posterView" class="pv" hidden>
+    <div class="pv-bg" data-close></div>
+    <div class="pv-box" role="dialog" aria-modal="true" aria-labelledby="pvTitle">
+      <button class="pv-x" data-close aria-label="Tutup">✕</button>
+      <div class="pv-media">
+        <span class="pv-frame" aria-hidden="true"></span>
+        <img id="pvImg" src="" alt="">
+      </div>
+      <div class="pv-body">
+        <span class="pv-tag" id="pvTag">POSTER</span>
+        <h3 id="pvTitle">TITLE</h3>
+        <p id="pvDesc"></p>
+        <ul class="pv-meta">
+          <li><span>TAHUN</span><b id="pvYear">2025</b></li>
+          <li><span>KATEGORI</span><b id="pvCat">VISUAL</b></li>
+        </ul>
+        <a class="btn btn-red pv-cta" id="pvOpen" href="#" target="_blank" rel="noopener">BUKA GAMBAR</a>
+      </div>
+      <span class="pv-deco" aria-hidden="true">05</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
