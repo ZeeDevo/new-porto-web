@@ -22,13 +22,13 @@
 *{margin:0;padding:0;box-sizing:border-box}
 
 html{scroll-behavior:smooth}
+html,body{overflow-x:clip;max-width:100%}
 
 body{
   font-family:var(--body);
   font-weight:600;
   background:var(--black);
   color:var(--white);
-  overflow-x:hidden;
   letter-spacing:.02em;
   cursor:crosshair;
 }
@@ -419,10 +419,11 @@ body::after{
 .deco-type{right:7%;top:18%;font-size:clamp(4rem,12vw,10rem);color:rgba(255,255,255,.035);letter-spacing:-.06em;transform:rotate(-12deg)}
 .deco-cross{right:10%;bottom:7%;font-size:clamp(6rem,17vw,13rem);color:rgba(230,0,18,.12);transform:rotate(-15deg)}
 .sec-num{
-  font-family:var(--display);font-weight:400;
-  font-size:1.8rem;color:transparent;
-  -webkit-text-stroke:2px var(--red);
+  font-family:var(--display);font-weight:500;
+  font-size:1.6rem;line-height:1;color:#fff;
+  background:var(--red);padding:.15rem .6rem;
   transform:skewX(-10deg);
+  box-shadow:4px 4px 0 #fff;
 }
 .sec-head h2{
   font-family:var(--display);font-weight:400;
@@ -681,13 +682,83 @@ body::after{
 }
 [data-rev].in{opacity:1;transform:none}
 
+/* ---------- P5X DETAIL ---------- */
+/* sapuan merah diagonal di belakang hero */
+.hero-band{
+  position:absolute;left:-5%;right:-5%;top:60%;height:64px;z-index:-1;
+  background:linear-gradient(90deg,transparent,rgba(230,0,18,.9) 18%,rgba(230,0,18,.9) 82%,transparent);
+  transform:skewY(-8deg);opacity:.3;pointer-events:none;
+}
+/* bayangan diagonal tipis di setiap section */
+.panel:not(.hero)::after{
+  content:"";position:absolute;right:0;top:0;width:32%;height:100%;
+  background:linear-gradient(115deg,transparent 62%,rgba(230,0,18,.06) 62%);
+  pointer-events:none;
+}
+/* ticker merah berjalan */
+.ticker{
+  position:relative;z-index:1;overflow:hidden;white-space:nowrap;
+  background:var(--red);color:#fff;
+  border-block:3px solid #000;
+  transform:skewY(-2deg);margin:clamp(3rem,9vh,5rem) 0 0;
+}
+/* detail tambahan: kilat sapuan di tombol, glitch halus di judul & thumbnail */
+.btn{overflow:hidden}
+.btn::after{
+  content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);
+  transform:skewX(-20deg);pointer-events:none;
+}
+.btn:hover::after{left:120%;transition:left .5s}
+.hero-title .accent{animation:flick 6s steps(1) infinite}
+@keyframes flick{
+  0%,92%,100%{text-shadow:5px 5px 0 #fff}
+  94%{text-shadow:-4px 0 0 #fff,5px 5px 0 var(--red)}
+  97%{text-shadow:6px -2px 0 #fff,-3px 3px 0 var(--red)}
+}
+.sec-head h2:hover{text-shadow:-3px 0 0 var(--red),3px 0 0 #fff}
+.work-thumb::after{
+  content:"";position:absolute;inset:0;opacity:0;transition:opacity .25s;
+  background:repeating-linear-gradient(115deg,transparent 0 14px,rgba(230,0,18,.35) 14px 16px);
+  pointer-events:none;
+}
+.work:hover .work-thumb::after{opacity:1}
+.contact-links a{transition:.18s}
+.ticker-track{
+  display:inline-flex;align-items:center;gap:1.4rem;padding:.45rem 0;
+  font-family:var(--display);font-weight:500;font-size:1.3rem;letter-spacing:.12em;
+  animation:tick 26s linear infinite;
+}
+.ticker-track span:nth-child(even){color:#000}
+@keyframes tick{to{transform:translateX(-50%)}}
+/* transisi slash saat pindah section */
+#wipe{
+  position:fixed;top:-10%;bottom:-10%;left:-10%;width:120vw;z-index:90;
+  background:var(--red);box-shadow:-24px 0 0 #fff;
+  transform:translateX(-130%) skewX(-18deg);pointer-events:none;
+}
+#wipe.go{animation:wipe .6s cubic-bezier(.7,0,.3,1)}
+@keyframes wipe{
+  0%{transform:translateX(-130%) skewX(-18deg)}
+  50%{transform:translateX(0) skewX(-18deg)}
+  100%{transform:translateX(130%) skewX(-18deg)}
+}
+/* chip hero: hover seperti tombol P5X */
+.chip{transition:.18s}
+.chip:hover{background:var(--red);color:#fff;transform:skewX(-6deg) translateY(-2px)}
+@media(prefers-reduced-motion:reduce){
+  .ticker-track{animation:none}
+  #wipe.go{animation:none;transform:translateX(130%) skewX(-18deg)}
+}
+
 /* ---------- RESPONSIVE ---------- */
 @media(max-width:900px){
   :root{--content-left:clamp(4.5rem,11vw,6rem);--content-right:clamp(1rem,4vw,2rem)}
   .card-stage{
-    position:relative;right:auto;top:auto;transform:none;
-    margin:3rem auto 0;width:240px;padding-top:34px;
+    position:relative;right:auto;top:auto;transform:none;z-index:0;
+    margin:5rem auto 0;width:240px;padding-top:34px;
   }
+  .panel.hero{overflow-x:clip}
   .hero-inner{max-width:100%}
   .hero-slash{right:6%;bottom:8%;height:26%}
   .hero-stamp{display:none}
@@ -698,11 +769,10 @@ body::after{
   .pv-box{grid-template-columns:1fr}
   .pv-media img{max-height:48vh}
   .pv-deco{font-size:4.5rem}
-  .lanyard-strap{height:60vh}
-  .lanyard-strap.left{transform:translateY(-60vh) rotate(5deg)}
-  .lanyard-strap.right{transform:translateY(-60vh) rotate(-5deg)}
-  @keyframes sway{from{transform:translateY(-60vh) rotate(3.6deg)}to{transform:translateY(-60vh) rotate(6.2deg)}}
-  @keyframes swayR{from{transform:translateY(-60vh) rotate(-6.2deg)}to{transform:translateY(-60vh) rotate(-3.6deg)}}
+  /* tali naik dan melebar ke tepi layar, di belakang teks banner (z-index lebih rendah) */
+  .lanyard-strap{height:280px;top:-280px;width:18px}
+  .lanyard-strap.left{transform:rotate(-44deg);transform-origin:50% 100%;animation:none}
+  .lanyard-strap.right{transform:rotate(44deg);transform-origin:50% 100%;animation:none}
 }
 @media(max-width:560px){
   #tabs{
@@ -718,7 +788,17 @@ body::after{
   .tab::before{display:none}
   .tab.active{border-top-color:#fff}
   .panel{padding:4rem 1.2rem 6rem;min-height:auto}
-  .hero{padding-bottom:6.5rem}
+  .hero{padding:4rem 1.2rem 7rem}
+  .card-stage{margin-top:6.5rem}
+  #tabs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr))}
+  .tab,.tab.active,.tab:hover{padding:0 !important;min-width:0;justify-content:center;font-size:.55rem;letter-spacing:0}
+  .tab span{letter-spacing:0;transform:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+  .hero-desc{max-width:100%;width:100%;font-size:.95rem;overflow-wrap:anywhere;box-sizing:border-box;margin-right:0}
+  .hero-inner{min-width:0;width:100%;box-sizing:border-box}
+  /* judul lebih kecil supaya tidak melewati tepi layar */
+  .hero-title{font-size:clamp(2.2rem,12.5vw,3.2rem);max-width:100%}
+  .hero-title .accent{margin-left:0;text-shadow:3px 3px 0 #fff}
+  .hero-band{display:none}
   .panel-deco{opacity:.5}
   .deco-circle{width:4rem;height:4rem;font-size:1.4rem;right:4%;bottom:4%}
   .deco-type{top:10%}
@@ -726,4 +806,5 @@ body::after{
   .hero-title .accent{margin-left:0}
   .work:nth-child(2),.work:nth-child(3){margin-top:0}
   body{cursor:auto}
+  .foot{padding-bottom:5rem}
 }

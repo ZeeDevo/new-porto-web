@@ -97,11 +97,17 @@
   });
 
   /* ---------- SMOOTH TAB CLICK ---------- */
+  var wipe = document.getElementById("wipe");
   tabs.forEach(function (t) {
     t.addEventListener("click", function (ev) {
       ev.preventDefault();
       var target = document.querySelector(t.getAttribute("href"));
-      if (target) target.scrollIntoView({ behavior: "smooth" });
+      if (!target) return;
+      /* transisi slash P5X: sapuan merah saat pindah section */
+      wipe.classList.remove("go");
+      void wipe.offsetWidth;
+      wipe.classList.add("go");
+      setTimeout(function () { target.scrollIntoView({ behavior: "smooth" }); }, 250);
     });
   });
 
